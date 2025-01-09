@@ -41,6 +41,7 @@ public class Shop {
             System.out.println("5) Ver inventario");
             System.out.println("6) Venta");
             System.out.println("7) Ver ventas");
+            System.out.println("8) Ver total de ventas");
             System.out.println("10) Salir programa");
             System.out.print("Seleccione una opcion: ");
             opcion = scanner.nextInt();
@@ -117,15 +118,15 @@ public class Shop {
 
     public void addProduct() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Nombre del producto: ");
+        System.out.print("Nombre del producto: ");
         String name = scanner.nextLine();
         if (findProduct(name) != null) {
             System.out.println("Error: El producto ya existe en el inventario.");
             return;
         }
-        System.out.println("Precio mayorista: ");
+        System.out.print("Precio mayorista: ");
         double wholesalerPrice = scanner.nextDouble();
-        System.out.println("Stock inicial: ");
+        System.out.print("Stock inicial: ");
         int stock = scanner.nextInt();
         addProduct(new Product(name, wholesalerPrice, true, stock));
         System.out.println("Producto agregado con exito.");
